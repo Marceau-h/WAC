@@ -150,5 +150,5 @@ def main(start: int = 0, end: int = len(lines), len_seg: int = 30_000) -> None:
 
 
 if __name__ == "__main__":
-    main(start=750_000)
+    main()
 
