@@ -1,0 +1,4 @@
+tqdm~=4.66.1
+
+spacy[cuda-autodetect]
+fr_dep_news_trf @https://github.com/explosion/spacy-models/releases/download/fr_dep_news_trf-3.6.1/fr_dep_news_trf-3.6.1.tar.gz
