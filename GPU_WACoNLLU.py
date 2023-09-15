@@ -6,7 +6,9 @@ from typing import Tuple, Dict, Any, List
 import spacy
 from tqdm.auto import tqdm
 
-WAC: Path = Path()
+cwd: Path = Path(__file__).parent
+
+WAC: Path = cwd
 
 # Comment the following line if you don't have a GPU or if you don't want to use it for some reason
 spacy.require_gpu()
@@ -21,7 +23,7 @@ From 100 to 200 Languages. In: Proceedings of the 8th International Language Res
 
 A special thanks to the authors for their work and for making the corpus available to the public.
 """
-file: Path = Path("fra_mixed_2009_1M-sentences.txt")
+file = cwd / "fra_mixed_2009_1M-sentences.txt"
 with file.open("r", encoding="utf-8") as f:
     # The `int(i)` allows us to check if we are catching the sentence id correctly
     lines: Dict[int, str] = {int(i): l for i, l in [l.split("\t", 1) for l in f.readlines()]}
@@ -148,4 +150,5 @@ def main(start: int = 0, end: int = len(lines), len_seg: int = 30_000) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main(start=750_000)
+
